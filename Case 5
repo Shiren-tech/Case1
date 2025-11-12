@@ -1,0 +1,20 @@
+public class discount {
+    public static void main(String[] args) {
+        int harga = 20000;
+        int jumlah = 35;
+
+        int diskon = (jumlah / 10) * 5;
+        if (diskon > 50) {
+            diskon = 50;
+        }
+
+        double total = harga * jumlah;
+        double totalAkhir = total - (total * diskon / 100.0);
+
+        int totalBulat = (int) totalAkhir;
+
+        System.out.println("Total items: " + jumlah);
+        System.out.println("Discount: " + diskon + "%");
+        System.out.println("Total after discount: Rp" + totalBulat);
+    }
+}
