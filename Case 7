@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class User {
+    String username;
+    String password;
+
+    User(String u, String p) {
+        username = u;
+        password = p;
+    }
+}
+
+public class password{
+    public static void main(String[] args) {
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new User("nazla", "12345"));
+        users.add(new User("anna", "qwerty"));
+        users.add(new User("kerin", "abcde"));
+        users.add(new User("alrmira", "pass123"));
+        users.add(new User("memey", "hello"));
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter username: ");
+        String inputUser = input.nextLine();
+        System.out.print("Enter password: ");
+        String inputPass = input.nextLine();
+
+        boolean valid = false;
+        for (User u : users) {
+            if (u.username.equals(inputUser) && u.password.equals(inputPass)) {
+                valid = true;
+                break;
+            }
+        }
+
+        if (valid) {
+            System.out.println("Username and password valid, you can login into the dashboard");
+        } else {
+            System.out.println("Wrong username and password");
+        }
+    }
+}
